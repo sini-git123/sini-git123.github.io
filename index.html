@@ -1,0 +1,210 @@
+<html>
+
+	<head>
+		<link  rel="stylesheet" href="style.css">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+		<title>Ticket Booking App</title>
+	</head>
+<!--Card
+background-color: #2f7fad; -->
+	<body style="background-image:url(img.jpeg);">
+		<script src="index.js" type="text/javascript" > </script>
+		<form method="post"   name="myform" onsubmit="return validFormFieldInput();" action="newHTML.html" >
+
+			<div class="card shadow mb-5 bg-white rounded">
+
+				<!--Card-Body-->
+					<div class="card-body">
+
+						<!--Card-Title-->
+						<p class="card-title text-center shadow mb-5 rounded">Ticket Booking Form</p>
+				
+						<div class="icons text-center">
+
+						<i class="fa fa-plane fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-taxi fa-2x" aria-hidden="true"></i>
+						<i class="fa fa-train fa-2x" aria-hidden="true"></i>
+
+
+						</div>
+
+						<hr>
+
+						<p class="searchText"><strong>Search For Cheap Flights</strong></p>
+
+						<!--First Row-->
+						<div class="row mb-3 mt-3">
+
+							<label class="radiobtn"><input type="radio" name="triptype" value="One Way">One Way</label>
+							<label class="radiobtn"><input type="radio" name="triptype" value="Round Trip">Round Trip</label>
+
+						</div>
+
+
+						<!--Second Row-->
+						<div class="row">
+
+							<div class="col-sm-6">
+								<select class="browser-default custom-select mb-4" id="from">
+									<option value="" disabled="" selected="">From City/Airport</option>
+									<option value="1">New Delhi</option>
+									<option value="2">Mumbai</option>
+									<option value="3">Bangalore</option>
+								</select>
+							</div>
+
+							<div class="col-sm-6">
+								<select class="browser-default custom-select mb-4" id="to">
+									<option value="" disabled="" selected="">To City/Airport</option>
+									<option value="1">New Delhi</option>
+									<option value="2">Mumbai</option>
+									<option value="3">Bangalore</option>
+								</select>
+							</div>
+
+						</div>
+						<!--
+							Date row
+						-->
+						<div class="row">
+
+							<div class="col-sm-6">
+								Departing     
+							</div>
+
+							<div class="col-sm-6">
+								Arriving:        
+							</div>
+
+						</div>
+					
+						<!--Third Row Date-->
+						<div class="row">
+
+							<div class="col-sm-6">
+								<input type="date" id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome" >
+							</div>
+
+								<div class="col-sm-6">
+									<input type="date" id="date-picker-example1" class="form-control datepicker" style="font-family:Arial, FontAwesome" >
+							</div>
+
+						</div>
+
+						<!--Third Row Class-->
+							<div class="control radio">
+								
+								<div class="control-item">
+									<h6 style="margin-bottom: 8px">Class</h6>
+									<label>
+										<input type="radio" name="seat" value="Economy" checked="checked">
+										<span>Economy</span>
+									</label>
+									<label>
+										<input type="radio" name="seat" value="Business">
+										<span>Business</span>
+									</label>
+									<label>
+										<input type="radio" name="seat" value="First Class">
+										<span>First Class</span>
+									</label>
+								</div>
+							</div>
+				
+				
+					
+
+								<!--Fifth Row-->
+								<div class="row">
+									<div class="col-sm-4">Adults(15+)</div>
+									<div class="col-sm-4">
+										<select  onchange="passenger()" class="browser-default custom-select mb-4" id="adult">
+											<option value="" disabled="" selected=""></option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">Kids(0-14)</div>
+									<div class="col-sm-4">
+										<select  onchange="passenger()"  class="browser-default custom-select mb-4" id="kids">
+											<option value="" disabled="" selected=""></option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+									</div>
+								</div>
+								
+
+								
+								
+										<!--six Row passenger details-->
+
+										<div class="passdet" id="passdet" style="display: none;">
+											
+											<h6 class="passheading" style="margin-bottom: 8px">Passenger Details 1:</h6>
+											<div class="col-sm-4">
+
+												<label>Name:</label>
+												<input type="text" id="username"  title="Must contain minimum 5 letters" />  <br /><br />
+												
+											</div>
+											<div class="col-sm-4">
+												<label>Gender:</label>
+												<label class="radiobtn"><input type="radio" name="gender" value="male">Male</label>
+												<label class="radiobtn"><input type="radio" name="gender" value="female">Female</label>
+									
+											</div>
+											<div class="col-sm-4">
+
+												<label >Age:</label>
+												<input type="text" id="age" name="" value=""></input>
+											</div>
+											<!-- <div id="numpass"></div> -->
+				
+											<br>
+											<br>
+										</div>
+											<br>
+											<br>
+											<!--six Row Payment details-->
+											<div class="row" id="pay" >
+											   
+												<h6 style="margin-bottom: 8px">Payment Details:</h6>
+												<div class="col-sm-4">
+	
+													Full Name:  <input type="text" id="fullname"  title="Must contain minimum 5 letters" />  <br /><br />
+													
+												</div>
+												<div class="col-sm-4">
+													<label class="radiobtn">Email:</label>
+													 <input type="email" id="email"  title="Valid email" />  <br /><br />
+
+												</div>
+												<div class="col-sm-4">
+	
+													<label class="phone" >Mobile No:</label>
+													<input type="text" id="phoneno"  title="Valid mobile Number"  />  <br /><br />
+
+												</div>
+												<div id="row">
+													<div class="col-sm-4">
+														<label class="det" >Additional Details:</label>
+														<textarea id="more" name="more" rows="4" cols="50" title="Enter the details">
+														</textarea>
+													</div>
+												</div>
+	
+							
+							
+											</div>
+								<input  class="btn btn-primary float-right mt-5" type="submit" value="Find Flights">  </input>
+					</div>
+			</div>
+		</form>
+	</body>
+</html>
